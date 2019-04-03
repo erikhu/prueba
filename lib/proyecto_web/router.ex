@@ -11,6 +11,9 @@ defmodule ProyectoWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :put_secure_browser_headers
   end
 
   scope "/", ProyectoWeb do
@@ -24,6 +27,7 @@ defmodule ProyectoWeb.Router do
   # Other scopes may use custom stacks.
    scope "/external", ProyectoWeb do
     pipe_through :api
+
     post "/payment", PageController, :pay
     post "/payment/confirmation", PageController, :confirmation_pay
   end

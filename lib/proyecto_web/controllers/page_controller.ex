@@ -10,22 +10,18 @@ defmodule ProyectoWeb.PageController do
   end
 
   def payment(conn, _params) do
-    conn
-    |> put_flash( :info, "htaohetun")
-    |> render("pagos.html" )
+    render(conn,"pagos.html" )
   end
 
   def pay(conn, _params) do
     conn
     |> put_flash(:info, "Pago")
-    |> fetch_flash()
     |> render("confirmation.html")
   end
 
   def confirmation_pay(conn, _params) do
     conn
     |> put_flash(:info, "Confirmo")
-    |> fetch_flash()
     |> render("confirmation.html")
   end
 end
