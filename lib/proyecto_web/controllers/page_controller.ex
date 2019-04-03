@@ -13,7 +13,11 @@ defmodule ProyectoWeb.PageController do
     render(conn, "pagos.html")
   end
 
-  def pay(conn, _params) do
+  def pay(conn, params) do
+    render(conn, "pagos.html")
+  end
+
+  def confirmation_pay(conn, params) do
     render(conn, "pagos.html")
   end
 end

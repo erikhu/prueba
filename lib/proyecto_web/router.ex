@@ -17,13 +17,9 @@ defmodule ProyectoWeb.Router do
     pipe_through [:browser]
     forward "/jobs", BackgroundJob.Plug
     get "/", PageController, :index
-    get "/test", PageController, :test
-    get "/pagos", PageController, :payment
-    post "/pagos", PageController, :pay
-    get "/hello", HelloController, :index
-    get "/hello/:messenger", HelloController, :show
-    get "/another/:id", HelloController, :another
-    resources "/users", UserController
+    get "/payment", PageController, :payment
+    post "/external/payment", PageController, :pay
+    post "/external/payment/confirmation", PageController, :confirmation_pay
   end
 
 
