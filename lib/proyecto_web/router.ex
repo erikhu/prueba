@@ -18,13 +18,13 @@ defmodule ProyectoWeb.Router do
     forward "/jobs", BackgroundJob.Plug
     get "/", PageController, :index
     get "/payment", PageController, :payment
-    post "/external/payment", PageController, :pay
-    post "/external/payment/confirmation", PageController, :confirmation_pay
-  end
+    end
 
 
   # Other scopes may use custom stacks.
-  # scope "/api", ProyectoWeb do
-  #   pipe_through :api
-  # end
+   scope "/external", ProyectoWeb do
+    pipe_through :api
+    post "/payment", PageController, :pay
+    post "/payment/confirmation", PageController, :confirmation_pay
+  end
 end
