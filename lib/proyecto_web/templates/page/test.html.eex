@@ -1,0 +1,13 @@
+<div class="phx-hero">
+  <p>
+    <%= handler_info(@conn) %>
+  </p>
+  <h3>
+    Keys for the conn struct
+  </h3>
+  <%=  for key <- connection_keys(@conn) do %>
+    <p>
+      <%= render(ProyectoWeb.SharedView,"key.html", key: key)%>
+    </p>
+  <% end %>
+</div> 

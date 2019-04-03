@@ -1,0 +1,55 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :usuario %>
+  <%= text_input f, :usuario %>
+  <%= error_tag f, :usuario %>
+
+  <%= label f, :factura %>
+  <%= number_input f, :factura %>
+  <%= error_tag f, :factura %>
+
+  <%= label f, :valor %>
+  <%= number_input f, :valor, step: "any" %>
+  <%= error_tag f, :valor %>
+
+  <%= label f, :descripcionFactura %>
+  <%= text_input f, :descripcionFactura %>
+  <%= error_tag f, :descripcionFactura %>
+
+  <%= label f, :tokenSeguridad %>
+  <%= text_input f, :tokenSeguridad %>
+  <%= error_tag f, :tokenSeguridad %>
+
+  <%= label f, :metodoPago %>
+  <%= number_input f, :metodoPago %>
+  <%= error_tag f, :metodoPago %>
+
+  <%= label f, :documentoComprador %>
+  <%= number_input f, :documentoComprador %>
+  <%= error_tag f, :documentoComprador %>
+
+  <%= label f, :tipoDocumento %>
+  <%= text_input f, :tipoDocumento %>
+  <%= error_tag f, :tipoDocumento %>
+
+  <%= label f, :nombreComprador %>
+  <%= text_input f, :nombreComprador %>
+  <%= error_tag f, :nombreComprador %>
+
+  <%= label f, :apellidoComprador %>
+  <%= text_input f, :apellidoComprador %>
+  <%= error_tag f, :apellidoComprador %>
+
+  <%= label f, :correoComprador %>
+  <%= text_input f, :correoComprador %>
+  <%= error_tag f, :correoComprador %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

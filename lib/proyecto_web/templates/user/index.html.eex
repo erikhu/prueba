@@ -1,0 +1,46 @@
+<h1>Listing Payment users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Factura</th>
+      <th>Valor</th>
+      <th>Descripcionfactura</th>
+      <th>Tokenseguridad</th>
+      <th>Metodopago</th>
+      <th>Documentocomprador</th>
+      <th>Tipodocumento</th>
+      <th>Nombrecomprador</th>
+      <th>Apellidocomprador</th>
+      <th>Correocomprador</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @payment_users do %>
+    <tr>
+      <td><%= user.usuario %></td>
+      <td><%= user.factura %></td>
+      <td><%= user.valor %></td>
+      <td><%= user.descripcionFactura %></td>
+      <td><%= user.tokenSeguridad %></td>
+      <td><%= user.metodoPago %></td>
+      <td><%= user.documentoComprador %></td>
+      <td><%= user.tipoDocumento %></td>
+      <td><%= user.nombreComprador %></td>
+      <td><%= user.apellidoComprador %></td>
+      <td><%= user.correoComprador %></td>
+
+      <td>
+        <%= link "Show", to: Routes.user_path(@conn, :show, user) %>
+        <%= link "Edit", to: Routes.user_path(@conn, :edit, user) %>
+        <%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New User", to: Routes.user_path(@conn, :new) %></span>
