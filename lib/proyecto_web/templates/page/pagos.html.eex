@@ -1,0 +1,12 @@
+<h1>Pagos</h1>
+<section class="row">
+  <article class="column">
+    <form method="post" action="https://colombia.recaudoexpress.com/tc/app/inputs/compra.jsp">
+      <input type="hidden" name="usuario" value="z41hn83ds6ga2802">
+      <input type="hidden" name="factura" value="00002">
+      <input type="hidden" name="valor" value="10001">
+      <input type="hidden" name="descripcionFactura" value="Ejemplo">
+      <input type="submit" value="submit" />
+    </form>
+  </article>
+</section>
