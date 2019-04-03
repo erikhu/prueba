@@ -1,5 +1,6 @@
 <h1>Pagos</h1>
 <section class="row">
+  <%= inspect @conn.params %>
   <article class="column">
     <form method="post" action="https://colombia.recaudoexpress.com/tc/app/inputs/compra.jsp">
       <input type="hidden" name="usuario" value="z41hn83ds6ga2802">
